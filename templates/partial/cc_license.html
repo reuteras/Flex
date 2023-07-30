@@ -7,6 +7,7 @@
   &copy; {{ COPYRIGHT_YEAR }} {{ COPYRIGHT_NAME }} - {{ _('This work is licensed under a %(cc)s',
    cc='<a rel="license" href="{}" target="_blank">{}</a>'.format(cc_url, cc_name)|safe) }}
 </p>
+<p class="h-card"><a class="u-url" rel="me" href="{{ SITEURL }}"><span class="p-name">{{ COPYRIGHT_NAME }}</span></a></p>
 {% include "partial/flex.html" %}
 <p>
   {% if CC_LICENSE['icon'] != False %}
