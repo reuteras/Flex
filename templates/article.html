@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
 {% block meta %}
-<meta name="author" content="{{ article.author.name }}" />
-<meta name="description" content="{{ article.summary|striptags|escape }}" />
+<meta name="author" content="{{ article.author.name }}">
+<meta name="description" content="{{ article.summary|striptags|escape }}">
 <meta name="keywords" content="{{ article.tags|join(', ')|escape }}">
 
 {% if article.translations -%}
-<link rel="alternate" href="{{ SITEURL }}/{{ article.url }}" hreflang="{{ article.lang }}" />
+<link rel="alternate" href="{{ SITEURL }}/{{ article.url }}" hreflang="{{ article.lang }}">
 {% for a in article.translations %}
-<link rel="alternate" href="{{ SITEURL }}/{{ a.url }}" hreflang="{{ a.lang }}" />
+<link rel="alternate" href="{{ SITEURL }}/{{ a.url }}" hreflang="{{ a.lang }}">
 {% endfor %}
 {% endif %}
 
@@ -18,21 +18,23 @@
 {% block title %} &ndash; {{ article.title|striptags|escape }}{% endblock %}
 
 {% block content %}
-<article class="single">
+<article class="single h-entry">
   <header>
     {% if not ARTICLE_HIDE_TRANSLATION %}
       {% import 'partial/translations.html' as translations with context %}
       {{ translations.translations_for(article) }}
     {% endif %}
-    <h1 id="{{ article.slug }}">{{ article.title }}</h1>
+    <a class="u-url" href="{{ SITEURL }}/{{ article.url }}"><h1 class="p-name" id="{{ article.slug }}">{{ article.title }}</h1></a>
     <p>
+      <time class="dt-published" datetime="{{ article.date|strftime('%Y-%m-%d %H:%M:%S%z') }}">
       {{ _('Posted on %(when)s in %(category)s',
            when=article.locale_date,
-           category='<a href="%s/%s">%s</a>'|format(SITEURL, article.category.url, article.category)|safe) }}
-
+           category='<a class="p-category" href="%s/%s">%s</a>'|format(SITEURL, article.category.url, article.category)|safe) }}
+      </time> by <a rel="author" class="p-author h-card" href="{{ article.author.url }}">{{ article.author.name }}.</a>
       {% if PLUGINS and 'post_stats' in PLUGINS %}
         &#8226; {{ _('%(minutes)s min read', minutes=article.stats['read_mins']) }}
       {% endif %}
+      Last updated {{ article.locale_modified }}
     </p>
   </header>
 
@@ -46,7 +48,7 @@
     </script>
   {% endif %}
 
-  <div>
+  <div class="e-content">
     {{ article.content }}
   </div>
   <div class="tag-cloud">

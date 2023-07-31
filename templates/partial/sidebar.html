@@ -1,8 +1,8 @@
 <aside>
-  <div>
-    <a href="{{ SITEURL }}/">
+  <div class="h-card">
+    <a class="u-url" href="{{ SITEURL }}/">
       {% if SITELOGO %}
-      <img src="{{ SITELOGO }}" alt="{{ SITETITLE }}" title="{{ SITETITLE }}">
+      <img class="u-photo" src="{{ SITELOGO }}" alt="{{ COPYRIGHT_NAME }}">
       {% else %}
       <img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/profile.png" alt="{{ SITETITLE }}" title="{{ SITETITLE }}">
       {% endif %}
@@ -12,10 +12,24 @@
       <a href="{{ SITEURL }}/">{{ SITETITLE }}</a>
     </h1>
 
+    <p>
     {% if SITESUBTITLE %}
-    <p>{{ SITESUBTITLE }}</p>
+    <br>
+    <span class="p-note">{{ SITESUBTITLE }}</span><br>
     {% endif %}
-
+    {% if COPYRIGHT_NAME %}
+    <span class="p-name">{{ COPYRIGHT_NAME }}</span><br>
+    {% endif %}
+    {% if AUTHOR_LOCATION %}
+    <span class="p-region">{{ AUTHOR_LOCATION }}</span><br>
+    {% endif %}
+    {% if AUTHOR_COUNTRY %}
+    <span class="p-country-name">{{ AUTHOR_COUNTRY }}</span><br>
+    {% endif %}
+    {% if AUTHOR_EMAIL %}
+    <span><a class="u-email" href="mailto:{{ AUTHOR_EMAIL }}">{{ AUTHOR_EMAIL }}</a></span><br>
+    {% endif %}
+    </p>
     {% if PLUGINS %}
     {% if ('tipue_search' in PLUGINS or 'pelican.plugins.tipue_search' in PLUGINS) %}
     <form class="navbar-search" action="{{ SITEURL }}/search.html" role="search">
@@ -69,7 +83,7 @@
 
     {% if SOCIAL %}
     {% set solid = ['at', 'envelope', 'mailbox', 'rss'] %}
-    {% set relme = ['at', 'envelope', 'mailbox', 'mastodon'] %}
+    {% set relme = ['at', 'envelope', 'github', 'mailbox', 'mastodon'] %}
     <ul class="social">
       {% for name, link in SOCIAL %}
       <li>

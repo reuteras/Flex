@@ -6,7 +6,7 @@
 {% endif %}
 
 {% if STATUSCAKE['rumid'] %}
-<script type="text/javascript">var SC_RumID = {{ STATUSCAKE['rumid'] }};</script>
-<script type="text/javascript" async src="https://www.statuscake.com/App/RUM/embed.js"></script>
+<script>var SC_RumID = {{ STATUSCAKE['rumid'] }};</script>
+<script async src="https://www.statuscake.com/App/RUM/embed.js"></script>
 {% endif %}
 <!-- End StatusCake -->
