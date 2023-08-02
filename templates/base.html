@@ -87,7 +87,6 @@
   {% include "partial/icon.html" %}
   {% include "partial/color.html" %}
   {% include "partial/feed.html" %}
-  {% include "partial/plausible.html" %}
   {% if PGP_KEY %}
   <link rel="pgpkey" type="application/pgp-keys" href="{{ SITEURL }}/{{ PGP_KEY }}">
   {% endif %}
@@ -119,7 +118,6 @@
   {% endblock %}
 
   <title>{{ SITENAME }}{% block title %}{% endblock %}</title>
-  {% include "partial/clarity.html" %}
 </head>
 <body {% if not THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE %}class="{{ THEME_COLOR|default('light') }}-theme"{% endif %}>
   {% include "partial/sidebar.html" %}

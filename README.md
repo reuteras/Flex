@@ -22,10 +22,7 @@ This is my fork of the minimalist [Pelican](http://blog.getpelican.com/) theme.
 - [AddThis](http://www.addthis.com/)
 - [Disqus](https://disqus.com/)
 - [Matomo Analytics (formerly Piwik)](https://matomo.org/)
-- [Plausible](https://plausible.io/)
-- [StatusCake](https://www.statuscake.com/)
 - [Isso](https://posativ.org/isso/)
-- [Microsoft Clarity](https://clarity.microsoft.com)
 
 ## Plugins Support
 
