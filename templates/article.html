@@ -38,16 +38,6 @@
     </p>
   </header>
 
-  {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.article_top %}
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <ins class="adsbygoogle ads-responsive"
-         data-ad-client="{{ GOOGLE_ADSENSE.ca_id }}"
-         data-ad-slot="{{ GOOGLE_ADSENSE.ads.article_top }}"></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  {% endif %}
-
   <div class="e-content">
     {{ article.content }}
   </div>
@@ -69,9 +59,7 @@
     <div class="addthis_inline_share_toolbox"></div>
   </div>
   {% endif %}
-
   {% include "partial/neighbors.html" %}
-
   {% if article.related_posts %}
   <div class="related-posts">
     <h4>{{ _('You might enjoy') }}</h4>
@@ -107,17 +95,6 @@
     {% endif %}
   </div>
   {% endif %}
-
-  {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.article_bottom %}
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <ins class="adsbygoogle ads-responsive"
-         data-ad-client="{{ GOOGLE_ADSENSE.ca_id }}"
-         data-ad-slot="{{ GOOGLE_ADSENSE.ads.article_bottom }}"></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  {% endif %}
-
   {% include "partial/disqus.html" %}
   {% include "partial/webmention.html" %}
   {% include "partial/isso.html" %}

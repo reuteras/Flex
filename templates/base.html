@@ -22,9 +22,6 @@
   {% else %}
   <meta name="robots" content="{{ ROBOTS }}">
   {% endif %}
-  {% if USE_GOOGLE_FONTS != False %}
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
-  {% endif %}
   {% if USE_LESS %}
   <link rel="stylesheet/less" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/stylesheet/style.less">
   <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js"</script>
@@ -35,47 +32,44 @@
   {# DARK THEME STYLES #}
   {% if THEME_COLOR == "dark" or THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE or THEME_COLOR_ENABLE_USER_OVERRIDE %}
   <link id="dark-theme-style" rel="stylesheet" type="text/css"
-      {% if THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE %}
-        {% if THEME_COLOR|default("light") == "dark" %}
+    {% if THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE %}
+      {% if THEME_COLOR|default("light") == "dark" %}
     media="(prefers-color-scheme: dark), (prefers-color-scheme: no-preference)"
-        {% else %}
+      {% else %}
     media="(prefers-color-scheme: dark)"
-        {% endif %}
-      {% elif THEME_COLOR_ENABLE_USER_OVERRIDE and THEME_COLOR|default("light") == "light" %}
-    disabled="disabled"
       {% endif %}
+    {% elif THEME_COLOR_ENABLE_USER_OVERRIDE and THEME_COLOR|default("light") == "light" %}
+    disabled="disabled"
+   {% endif %}
     href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/stylesheet/dark-theme.min.css">
   {% endif %}
 
   {# PYGMENTS STYLES #}
   {% if THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE or THEME_COLOR_ENABLE_USER_OVERRIDE or THEME_COLOR == "dark" %}
   <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
-          {% if THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE %}
-            {% if THEME_COLOR|default("light") == "dark" %}
-              media="(prefers-color-scheme: dark), (prefers-color-scheme: no-preference)"
-            {% else %}
-              media="(prefers-color-scheme: dark)"
-            {% endif %}
-          {% elif THEME_COLOR_ENABLE_USER_OVERRIDE and THEME_COLOR|default("light") == "light" %}
-            disabled="disabled"
-          {% endif %}
-          href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/pygments/{{ PYGMENTS_STYLE_DARK or PYGMENTS_STYLE or 'monokai' }}.min.css">
+    {% if THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE %}
+      {% if THEME_COLOR|default("light") == "dark" %}
+    media="(prefers-color-scheme: dark), (prefers-color-scheme: no-preference)"
+      {% else %}
+    media="(prefers-color-scheme: dark)"
+    {% endif %}
+  {% elif THEME_COLOR_ENABLE_USER_OVERRIDE and THEME_COLOR|default("light") == "light" %}
+    disabled="disabled"
+  {% endif %}
+     href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/pygments/{{ PYGMENTS_STYLE_DARK or PYGMENTS_STYLE or 'monokai' }}.min.css">
   {% endif %}
   {% if THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE or not THEME_COLOR or THEME_COLOR == "light" %}
   <link id="pygments-light-theme" rel="stylesheet" type="text/css"
-          {% if THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE %}
-            {% if THEME_COLOR|default("light") == "dark" %}
-              media="(prefers-color-scheme: dark)"
-            {% else %}
-              media="(prefers-color-scheme: light)"
-            {% endif %}
-          {% endif %}
-          href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/pygments/{{ PYGMENTS_STYLE|default('github') }}.min.css">
+    {% if THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE %}
+      {% if THEME_COLOR|default("light") == "dark" %}
+    media="(prefers-color-scheme: dark)"
+      {% else %}
+    media="(prefers-color-scheme: light)"
+    {% endif %}
+  {% endif %}
+    href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/pygments/{{ PYGMENTS_STYLE|default('github') }}.min.css">
   {% endif %}
   {% if PLUGINS and ('tipue_search' in PLUGINS or 'pelican.plugins.tipue_search' in PLUGINS) %}
-      {% if USE_GOOGLE_FONTS != False %}
-  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400|Open+Sans" rel="stylesheet">
-      {% endif %}
   <link rel="stylesheet" 
     href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/tipuesearch/tipuesearch.min.css" />
   {% endif %}
@@ -93,17 +87,15 @@
   {% include "partial/icon.html" %}
   {% include "partial/color.html" %}
   {% include "partial/feed.html" %}
-  {% include "partial/ga.html" %}
-  {% include "partial/ggst.html" %}
   {% include "partial/plausible.html" %}
   {% if PGP_KEY %}
-    <link rel="pgpkey" type="application/pgp-keys" href="{{ SITEURL }}/{{ PGP_KEY }}">
+  <link rel="pgpkey" type="application/pgp-keys" href="{{ SITEURL }}/{{ PGP_KEY }}">
   {% endif %}
   {% if WEBMENTION_URL %}
-    <link rel="webmention" href="{{ WEBMENTION_URL }}" />
+  <link rel="webmention" href="{{ WEBMENTION_URL }}" />
   {% endif %}
   {% if PINGBACK_URL %}
-    <link rel="pingback" href="{{ PINGBACK_URL }}" />
+  <link rel="pingback" href="{{ PINGBACK_URL }}" />
   {% endif %}
   {% if not PLUGINS or 'seo' not in PLUGINS %}
     {% if REL_CANONICAL %}
@@ -127,31 +119,11 @@
   {% endblock %}
 
   <title>{{ SITENAME }}{% block title %}{% endblock %}</title>
-  {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.page_level_ads %}
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "{{ GOOGLE_ADSENSE.ca_id }}",
-      enable_page_level_ads: true
-    });
-  </script>
-  {% endif %}
-  {% include "partial/gtm.html" %}
   {% include "partial/clarity.html" %}
 </head>
 <body {% if not THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE %}class="{{ THEME_COLOR|default('light') }}-theme"{% endif %}>
-  {% include "partial/gtm_noscript.html" %}
   {% include "partial/sidebar.html" %}
   <main>
-    {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.main_menu %}
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <ins class="adsbygoogle ads-responsive"
-           data-ad-client="{{ GOOGLE_ADSENSE.ca_id }}"
-           data-ad-slot="{{ GOOGLE_ADSENSE.ads.main_menu }}"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    {% endif %}
     {% include "partial/nav.html" %}
     {% block content %}
     {% endblock %}
