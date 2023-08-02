@@ -1,0 +1,9 @@
+{% if WEBMENTION %}
+<!-- Webmention -->
+<script src="/theme/webmentions.js/webmention.min.js" data-wordcount="30" data-prevent-spoofing="true" data-comments-are-reactions="true" add-urls="https://reuteras.com/" async></script>
+<div id="webmentions"></div>
+<noscript>
+    {{ _('Please enable JavaScript to view comments.') }}
+</noscript>
+<!-- End webmention -->
+{% endif %}
