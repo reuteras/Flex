@@ -21,9 +21,7 @@ This is my fork of the minimalist [Pelican](http://blog.getpelican.com/) theme.
 
 - [AddThis](http://www.addthis.com/)
 - [Disqus](https://disqus.com/)
-- [Gauges Analytics](http://get.gaug.es/)
 - [Matomo Analytics (formerly Piwik)](https://matomo.org/)
-- [Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/)
 - [Plausible](https://plausible.io/)
 - [StatusCake](https://www.statuscake.com/)
 - [Isso](https://posativ.org/isso/)
