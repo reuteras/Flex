@@ -19,8 +19,6 @@ This is my fork of the minimalist [Pelican](http://blog.getpelican.com/) theme.
 
 ## Integrations
 
-- [AddThis](http://www.addthis.com/)
-- [Disqus](https://disqus.com/)
 - [Matomo Analytics (formerly Piwik)](https://matomo.org/)
 - [Isso](https://posativ.org/isso/)
 
