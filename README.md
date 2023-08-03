@@ -10,7 +10,7 @@ This is my fork of the minimalist [Pelican](http://blog.getpelican.com/) theme.
 - SEO Best Practices
 - Open Graph
 - Rich Snippets (JSON-LD)
-- Related Posts (via [plugin](https://github.com/getpelican/pelican-plugins/tree/master/related_posts) or AddThis)
+- Related Posts via [plugin](https://github.com/getpelican/pelican-plugins/tree/master/related_posts) 
 - Series (via [plugin](https://github.com/pelican-plugins/series))
 - Minute read (via [plugin](https://github.com/getpelican/pelican-plugins/tree/master/post_stats))
 - [Multiple Code Highlight Styles](https://github.com/alexandrevicenzi/Flex/wiki/Code-Highlight)

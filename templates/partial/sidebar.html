@@ -34,13 +34,13 @@
     {% if PLUGINS %}
     {% if 'pelican.plugins.search' in PLUGINS %}
     <div class="stork">
-      <input class="stork-input" type="text" autocomplete="on" name="q" data-stork="sitesearch" placeholder="{{ _('Search...') }}" onclick="loadStorkIndex()"/>
+      <input class="stork-input" type="text" autocomplete="off" name="q" data-stork="sitesearch" placeholder="{{ _('Search...') }}" onclick="loadStorkIndex()">
       <div class="stork-output" data-stork="sitesearch-output"></div>
     </div>
     {% endif %}
     {% endif %}
 
-    {% if (pages and DISPLAY_PAGES_ON_MENU) or LINKS %}
+    {% if (pages and DISPLAY_PAGES_ON_MENU) %}
     <nav>
       <ul class="list">
         {# Open links in new window depending on the LINKS_IN_NEW_TAB setting #}
@@ -68,6 +68,27 @@
             </li>
           {% endfor %}
         {% endif %}
+      </ul>
+    </nav>
+    {% endif %}
+    <br>
+    {% if LINKS %}
+    <nav>
+      <ul class="list">
+        {# Open links in new window depending on the LINKS_IN_NEW_TAB setting #}
+        {% macro get_target(link) -%}
+          {%- if LINKS_IN_NEW_TAB in ('all', true) -%}
+          _blank
+          {%- elif LINKS_IN_NEW_TAB == "external" and not link.startswith("/") and not link.startswith(SITEURL) -%}
+          _blank
+          {%- else -%}
+          _self
+          {%- endif -%}
+        {%- endmacro %}
+
+        {% if PAGES_SORT_ATTRIBUTE -%}
+          {% set pages = pages|sort(attribute=PAGES_SORT_ATTRIBUTE) %}
+        {%- endif %}
 
         {% for name, link in LINKS %}
           <li>

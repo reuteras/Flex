@@ -3,7 +3,6 @@
     {{ msg % kwargs }}
   {%- endmacro -%}
 {% endif %}
-
 <!DOCTYPE html>
 <html lang="{{ DEFAULT_LANG }}">
 <head>
@@ -72,7 +71,7 @@
   {% if 'pelican.plugins.search' in PLUGINS %}
   <link rel="stylesheet"
         type="text/css"
-        href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/stork/stork.css" />
+        href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/stork/stork.css">
   {% endif %}
   <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/font-awesome/css/fontawesome.css">
   <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/font-awesome/css/brands.css">
@@ -87,10 +86,10 @@
   <link rel="pgpkey" type="application/pgp-keys" href="{{ SITEURL }}/{{ PGP_KEY }}">
   {% endif %}
   {% if WEBMENTION_URL %}
-  <link rel="webmention" href="{{ WEBMENTION_URL }}" />
+  <link rel="webmention" href="{{ WEBMENTION_URL }}">
   {% endif %}
   {% if PINGBACK_URL %}
-  <link rel="pingback" href="{{ PINGBACK_URL }}" />
+  <link rel="pingback" href="{{ PINGBACK_URL }}">
   {% endif %}
   {% if not PLUGINS or 'seo' not in PLUGINS %}
     {% if REL_CANONICAL %}
