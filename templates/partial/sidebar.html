@@ -14,21 +14,21 @@
 
     <p>
     {% if SITESUBTITLE %}
-    <br>
-    <span class="p-note">{{ SITESUBTITLE }}</span><br>
-    <br>
+      <br>
+      <span class="p-note">{{ SITESUBTITLE }}</span><br>
+      <br>
     {% endif %}
     {% if COPYRIGHT_NAME %}
-    <span class="p-name">{{ COPYRIGHT_NAME }}</span><br>
+      <span class="p-name">{{ COPYRIGHT_NAME }}</span><br>
     {% endif %}
     {% if AUTHOR_LOCATION %}
-    <span class="p-region">{{ AUTHOR_LOCATION }}</span><br>
+      <span class="p-region">{{ AUTHOR_LOCATION }}</span><br>
     {% endif %}
     {% if AUTHOR_COUNTRY %}
-    <span class="p-country-name">{{ AUTHOR_COUNTRY }}</span><br>
+      <span class="p-country-name">{{ AUTHOR_COUNTRY }}</span><br>
     {% endif %}
     {% if AUTHOR_EMAIL %}
-    <span><a class="u-email" href="mailto:{{ AUTHOR_EMAIL }}">{{ AUTHOR_EMAIL }}</a></span><br>
+      <span><a class="u-email" href="mailto:{{ AUTHOR_EMAIL }}">{{ AUTHOR_EMAIL }}</a></span><br>
     {% endif %}
     </p>
     {% if PLUGINS %}
@@ -39,7 +39,6 @@
     </div>
     {% endif %}
     {% endif %}
-
     {% if (pages and DISPLAY_PAGES_ON_MENU) %}
     <nav>
       <ul class="list">
@@ -53,19 +52,17 @@
           _self
           {%- endif -%}
         {%- endmacro %}
-
         {% if PAGES_SORT_ATTRIBUTE -%}
           {% set pages = pages|sort(attribute=PAGES_SORT_ATTRIBUTE) %}
         {%- endif %}
-
         {% if DISPLAY_PAGES_ON_MENU %}
           {% for page in pages %}
-            <li>
-              <a target="{{ get_target(SITEURL) }}"
-                 href="{{ SITEURL }}/{{ page.url }}{% if not DISABLE_URL_HASH %}#{{ page.slug }}{% endif %}">
-                {{ page.title }}
-              </a>
-            </li>
+        <li>
+          <a target="{{ get_target(SITEURL) }}"
+            href="{{ SITEURL }}/{{ page.url }}{% if not DISABLE_URL_HASH %}#{{ page.slug }}{% endif %}">
+            {{ page.title }}
+          </a>
+        </li>
           {% endfor %}
         {% endif %}
       </ul>
@@ -85,20 +82,17 @@
           _self
           {%- endif -%}
         {%- endmacro %}
-
         {% if PAGES_SORT_ATTRIBUTE -%}
           {% set pages = pages|sort(attribute=PAGES_SORT_ATTRIBUTE) %}
         {%- endif %}
-
         {% for name, link in LINKS %}
-          <li>
-            <a target="{{ get_target(link) }}" href="{{ link }}" >{{ name }}</a>
-          </li>
+        <li>
+          <a target="{{ get_target(link) }}" href="{{ link }}" >{{ name }}</a>
+        </li>
         {% endfor %}
       </ul>
     </nav>
     {% endif %}
-
     {% if SOCIAL %}
     {% set solid = ['at', 'envelope', 'mailbox', 'rss'] %}
     {% set relme = ['at', 'envelope', 'github', 'mailbox', 'mastodon'] %}
