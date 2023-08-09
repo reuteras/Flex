@@ -100,7 +100,9 @@
       {% for name, link in SOCIAL %}
       <li>
         <a class="sc-{{ name }}"
-           {% if name in relme %}rel="me"{% endif %}
+           {% if name in relme %}
+           rel="me"
+           {% endif %}
            href="{{ link }}"
            target="_blank">
           <i class="{% if name in solid %}fa-solid{% else %}fa-brands{% endif %} fa-{{ name }}"></i>
@@ -111,3 +113,4 @@
     {% endif %}
   </div>
 </aside>
+

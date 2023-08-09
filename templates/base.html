@@ -114,12 +114,12 @@
 </head>
 <body {% if not THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE %}class="{{ THEME_COLOR|default('light') }}-theme"{% endif %}>
   {% include "partial/sidebar.html" %}
-  <main>
-    {% include "partial/nav.html" %}
-    {% block content %}
-    {% endblock %}
-    {% include "partial/footer.html" %}
-  </main>
+<main>
+  {% include "partial/nav.html" %}
+  {% block content %}
+  {% endblock %}
+  {% include "partial/footer.html" %}
+</main>
   {% include "partial/jsonld.html" %}
   {% include "partial/matomo.html" %}
   {% include 'partial/github.html' %}
