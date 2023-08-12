@@ -6,11 +6,10 @@
       {% else %}
       <img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/profile.png" alt="{{ SITETITLE }}" title="{{ SITETITLE }}">
       {% endif %}
+      <h1>
+        {{ SITETITLE }}
+      </h1>
     </a>
-
-    <h1>
-      <a href="{{ SITEURL }}/">{{ SITETITLE }}</a>
-    </h1>
 
     <p>
     {% if SITESUBTITLE %}
@@ -34,7 +33,8 @@
     {% if PLUGINS %}
     {% if 'pelican.plugins.search' in PLUGINS %}
     <div class="stork">
-      <input class="stork-input" type="text" autocomplete="off" name="q" data-stork="sitesearch" placeholder="{{ _('Search...') }}" onclick="loadStorkIndex()">
+      <label for="search">Site search:</label>
+      <input id="search" class="stork-input" type="text" title="Site search" autocomplete="off" alt="Site search" name="q" data-stork="sitesearch" placeholder="{{ _('Search...') }}" onclick="loadStorkIndex()">
       <div class="stork-output" data-stork="sitesearch-output"></div>
     </div>
     {% endif %}
@@ -105,7 +105,7 @@
            {% endif %}
            href="{{ link }}"
            target="_blank">
-          <i class="{% if name in solid %}fa-solid{% else %}fa-brands{% endif %} fa-{{ name }}"></i>
+            <i class="{% if name in solid %}fa-solid{% else %}fa-brands{% endif %} fa-{{ name }}"><div class="sr-only">{{ name }}</div></i>
         </a>
       </li>
       {% endfor %}
