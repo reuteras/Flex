@@ -34,7 +34,7 @@
     {% if 'pelican.plugins.search' in PLUGINS %}
     <div class="stork">
       <label for="search">Site search:</label>
-      <input id="search" class="stork-input" type="text" title="Site search" autocomplete="off" alt="Site search" name="q" data-stork="sitesearch" placeholder="{{ _('Search...') }}" onclick="loadStorkIndex()">
+      <input id="search" class="stork-input" type="text" title="Site search" autocomplete="off" name="q" data-stork="sitesearch" placeholder="{{ _('Search...') }}" onclick="loadStorkIndex()">
       <div class="stork-output" data-stork="sitesearch-output"></div>
     </div>
     {% endif %}
@@ -105,7 +105,7 @@
            {% endif %}
            href="{{ link }}"
            target="_blank">
-            <i class="{% if name in solid %}fa-solid{% else %}fa-brands{% endif %} fa-{{ name }}"><div class="sr-only">{{ name }}</div></i>
+            <div class="sr-only"><i class="{% if name in solid %}fa-solid{% else %}fa-brands{% endif %} fa-{{ name }}">{{ name }}</i></div>
         </a>
       </li>
       {% endfor %}
