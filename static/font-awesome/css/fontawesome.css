@@ -124,8 +124,8 @@
 .fa-beat {
   -webkit-animation-name: fa-beat;
           animation-name: fa-beat;
-  -webkit-animation-delay: var(--fa-animation-delay, 0);
-          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
   -webkit-animation-direction: var(--fa-animation-direction, normal);
           animation-direction: var(--fa-animation-direction, normal);
   -webkit-animation-duration: var(--fa-animation-duration, 1s);
@@ -138,8 +138,8 @@
 .fa-bounce {
   -webkit-animation-name: fa-bounce;
           animation-name: fa-bounce;
-  -webkit-animation-delay: var(--fa-animation-delay, 0);
-          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
   -webkit-animation-direction: var(--fa-animation-direction, normal);
           animation-direction: var(--fa-animation-direction, normal);
   -webkit-animation-duration: var(--fa-animation-duration, 1s);
@@ -152,8 +152,8 @@
 .fa-fade {
   -webkit-animation-name: fa-fade;
           animation-name: fa-fade;
-  -webkit-animation-delay: var(--fa-animation-delay, 0);
-          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
   -webkit-animation-direction: var(--fa-animation-direction, normal);
           animation-direction: var(--fa-animation-direction, normal);
   -webkit-animation-duration: var(--fa-animation-duration, 1s);
@@ -166,8 +166,8 @@
 .fa-beat-fade {
   -webkit-animation-name: fa-beat-fade;
           animation-name: fa-beat-fade;
-  -webkit-animation-delay: var(--fa-animation-delay, 0);
-          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
   -webkit-animation-direction: var(--fa-animation-direction, normal);
           animation-direction: var(--fa-animation-direction, normal);
   -webkit-animation-duration: var(--fa-animation-duration, 1s);
@@ -180,8 +180,8 @@
 .fa-flip {
   -webkit-animation-name: fa-flip;
           animation-name: fa-flip;
-  -webkit-animation-delay: var(--fa-animation-delay, 0);
-          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
   -webkit-animation-direction: var(--fa-animation-direction, normal);
           animation-direction: var(--fa-animation-direction, normal);
   -webkit-animation-duration: var(--fa-animation-duration, 1s);
@@ -194,8 +194,8 @@
 .fa-shake {
   -webkit-animation-name: fa-shake;
           animation-name: fa-shake;
-  -webkit-animation-delay: var(--fa-animation-delay, 0);
-          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
   -webkit-animation-direction: var(--fa-animation-direction, normal);
           animation-direction: var(--fa-animation-direction, normal);
   -webkit-animation-duration: var(--fa-animation-duration, 1s);
@@ -208,8 +208,8 @@
 .fa-spin {
   -webkit-animation-name: fa-spin;
           animation-name: fa-spin;
-  -webkit-animation-delay: var(--fa-animation-delay, 0);
-          animation-delay: var(--fa-animation-delay, 0);
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
   -webkit-animation-direction: var(--fa-animation-direction, normal);
           animation-direction: var(--fa-animation-direction, normal);
   -webkit-animation-duration: var(--fa-animation-duration, 2s);
@@ -454,8 +454,8 @@
           transform: scale(-1, -1); }
 
 .fa-rotate-by {
-  -webkit-transform: rotate(var(--fa-rotate-angle, none));
-          transform: rotate(var(--fa-rotate-angle, none)); }
+  -webkit-transform: rotate(var(--fa-rotate-angle, 0));
+          transform: rotate(var(--fa-rotate-angle, 0)); }
 
 .fa-stack {
   display: inline-block;
