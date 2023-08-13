@@ -105,7 +105,8 @@
            {% endif %}
            href="{{ link }}"
            target="_blank">
-            <div class="sr-only"><i class="{% if name in solid %}fa-solid{% else %}fa-brands{% endif %} fa-{{ name }}">{{ name }}</i></div>
+            <div class="sr-only">{{ name }}</div>
+            <i class="{% if name in solid %}fa-solid{% else %}fa-brands{% endif %} fa-{{ name }}" title="{{ name }}" aria-hidden="true"></i>
         </a>
       </li>
       {% endfor %}
