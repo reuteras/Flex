@@ -17,11 +17,6 @@ This is my fork of the minimalist [Pelican](http://blog.getpelican.com/) theme.
 - [Translation Support](https://github.com/alexandrevicenzi/Flex/wiki/Translations)
 - [Dark Mode](https://github.com/alexandrevicenzi/Flex/wiki/Dark-Mode)
 
-## Integrations
-
-- [Matomo Analytics (formerly Piwik)](https://matomo.org/)
-- [Isso](https://posativ.org/isso/)
-
 ## Plugins Support
 
 - [Github Corners](https://github.com/tholman/github-corners)
