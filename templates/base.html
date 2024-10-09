@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link type="text/plain" rel="author" href="{{ SITEURL}}/humans.txt">
+  <link type="text/plain" rel="author" href="{{ SITEURL }}/humans.txt">
   <link rel="indieweb" href="/.well-known/indieweb.txt">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="HandheldFriendly" content="True">
@@ -103,6 +103,9 @@
   {% block meta %}
   <meta name="author" content="{{ AUTHOR }}">
   <meta name="description" content="{{ SITEDESCRIPTION }}">
+    {% if MASTODON %}
+  <meta name="fediverse:creator" content="{{ MASTODON }}" />
+    {% endif %}
   {% include "partial/og.html" %}
   {% endblock %}
   <title>{{ SITENAME }}{% block title %}{% endblock %}</title>
