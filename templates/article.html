@@ -20,6 +20,9 @@
            when=article.locale_date,
            category='<a class="p-category" href="%s/%s">%s</a>'|format(SITEURL, article.category.url, article.category)|safe) }}
         </time> by <a rel="author" class="p-author h-card" href="/{{ article.author.url }}">{{ article.author.name }}.</a>
+        {% if SITELOGO %}
+          <img class="u-photo" src="{{ SITELOGO }}" alt="{{ COPYRIGHT_NAME }}" style="display:none;">
+        {% endif %}
         {% if PLUGINS and 'post_stats' in PLUGINS %}
         &#8226; {{ _('%(minutes)s min read', minutes=article.stats['read_mins']) }}
         {% endif %}
