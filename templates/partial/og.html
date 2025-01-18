@@ -4,13 +4,19 @@
   {% else %}
     {% set default_locale = 'en_US' %}
   {% endif %}
-  <meta property="og:site_name" content="{{ SITENAME }}">
-  <meta property="og:type" content="blog">
-  <meta property="og:title" content="{{ SITENAME }}">
-  <meta property="og:description" content="{{ SITEDESCRIPTION }}">
-  <meta property="og:locale" content="{{ default_locale }}">
-  <meta property="og:url" content="{{ SITEURL }}">
+  <meta property="og:site_name" content="{{ SITENAME }}" />
+  <meta property="og:type" content="blog" />
+  <meta property="og:title" content="{{ SITENAME }}" />
+  <meta name="twitter:title" content="{{ SITENAME }}" />
+  <meta property="og:description" content="{{ SITEDESCRIPTION }}" />
+  <meta name="twitter:description" content="{{ SITEDESCRIPTION }}" />
+  <meta property="og:locale" content="{{ default_locale }}" />
+  <meta  property="og:url" content="{{ SITEURL }}" />
   {% if SITELOGO %}
-  <meta property="og:image" content="{{ SITELOGO }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta  property="og:image" content="{{ SITELOGO }}" />
+  <meta property="og:image:secure_url" content="{{ SITEURL }}" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta name="twitter:image" content="{{ SITELOGO }}" />
   {% endif %}
 {% endif %}
